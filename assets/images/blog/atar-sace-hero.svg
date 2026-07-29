@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="What is the ATAR and SACE? Guide for South Australian students">
+<rect width="1200" height="630" fill="#12152b"/>
+<circle cx="150" cy="90" r="300" fill="#3658ff" opacity="0.15"/>
+<circle cx="1080" cy="560" r="300" fill="#f6c453" opacity="0.10"/>
+<text x="80" y="130" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="30" font-weight="800" fill="#f6c453" letter-spacing="6">SOUTH AUSTRALIA · YEAR 11 &amp; 12</text>
+<text x="80" y="252" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="98" font-weight="900" fill="#ffffff" letter-spacing="-3">What is the</text>
+<text x="80" y="364" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="98" font-weight="900" fill="#f6c453" letter-spacing="-3">ATAR &amp; SACE?</text>
+<text x="80" y="432" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="30" font-weight="600" fill="#c9cede">How the South Australian Certificate of Education works,</text>
+<text x="80" y="474" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="30" font-weight="600" fill="#c9cede">and how it becomes the rank universities use.</text>
+<g font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="24" font-weight="800">
+<rect x="80" y="516" rx="26" width="250" height="52" fill="none" stroke="#f6c453" stroke-opacity="0.55" stroke-width="2"/>
+<text x="205" y="550" fill="#f6c453" text-anchor="middle">200 credits</text>
+<rect x="350" y="516" rx="26" width="300" height="52" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"/>
+<text x="500" y="550" fill="#ffffff" text-anchor="middle">ATAR 0 – 99.95</text>
+<rect x="670" y="516" rx="26" width="320" height="52" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"/>
+<text x="830" y="550" fill="#ffffff" text-anchor="middle">Stage 1 &amp; Stage 2</text>
+</g>
+<g transform="translate(880,140)">
+<g transform="rotate(-8)">
+<rect x="0" y="60" rx="14" width="230" height="150" fill="#202545" stroke="#ffffff" stroke-opacity="0.2" stroke-width="2"/>
+<rect x="22" y="88" rx="7" width="120" height="13" fill="#ffffff" opacity="0.35"/>
+<rect x="22" y="114" rx="7" width="186" height="13" fill="#ffffff" opacity="0.18"/>
+<rect x="22" y="140" rx="7" width="160" height="13" fill="#ffffff" opacity="0.18"/>
+<rect x="22" y="170" rx="9" width="86" height="22" fill="#f6c453"/>
+</g>
+<g transform="translate(120,-10)">
+<polygon points="0,42 88,0 176,42 88,84" fill="#f6c453"/>
+<rect x="52" y="58" width="72" height="34" fill="#f6c453"/>
+<polygon points="52,92 88,110 124,92 124,58 52,58" fill="#d9a83e"/>
+<line x1="176" y1="42" x2="176" y2="108" stroke="#f6c453" stroke-width="5" stroke-linecap="round"/>
+<circle cx="176" cy="116" r="9" fill="#f6c453"/>
+</g>
+</g>
+</svg>

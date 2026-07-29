@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="640" viewBox="0 0 1160 640" role="img" aria-label="UCAT ANZ 2026 format: four subtests with question counts and timing">
+<rect width="1160" height="640" fill="#fbf7ee"/>
+<text x="60" y="66" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="34" font-weight="900" fill="#12152b" letter-spacing="-1">UCAT ANZ format in 2026</text>
+<text x="60" y="102" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="22" font-weight="600" fill="#697386">Four separately timed subtests · about 2 hours in total · no negative marking</text>
+
+<g transform="translate(60,150)">
+<rect x="0" y="0" rx="18" width="1040" height="96" fill="#ffffff" stroke="#e7e0d4" stroke-width="2"/>
+<text x="30" y="42" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="27" font-weight="800" fill="#12152b">Verbal Reasoning</text>
+<text x="30" y="74" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="21" font-weight="600" fill="#697386">44 questions · scored 300–900</text>
+<rect x="430" y="36" rx="12" width="560" height="24" fill="#f3eadc"/>
+<rect x="430" y="36" rx="12" width="308" height="24" fill="#3658ff"/>
+<text x="990" y="26" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="22" font-weight="900" fill="#12152b" text-anchor="end">22 min</text>
+</g>
+<g transform="translate(60,262)">
+<rect x="0" y="0" rx="18" width="1040" height="96" fill="#ffffff" stroke="#e7e0d4" stroke-width="2"/>
+<text x="30" y="42" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="27" font-weight="800" fill="#12152b">Decision Making</text>
+<text x="30" y="74" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="21" font-weight="600" fill="#697386">35 questions · scored 300–900</text>
+<rect x="430" y="36" rx="12" width="560" height="24" fill="#f3eadc"/>
+<rect x="430" y="36" rx="12" width="518" height="24" fill="#f6c453"/>
+<text x="990" y="26" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="22" font-weight="900" fill="#12152b" text-anchor="end">37 min</text>
+</g>
+<g transform="translate(60,374)">
+<rect x="0" y="0" rx="18" width="1040" height="96" fill="#ffffff" stroke="#e7e0d4" stroke-width="2"/>
+<text x="30" y="42" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="27" font-weight="800" fill="#12152b">Quantitative Reasoning</text>
+<text x="30" y="74" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="21" font-weight="600" fill="#697386">36 questions · scored 300–900</text>
+<rect x="430" y="36" rx="12" width="560" height="24" fill="#f3eadc"/>
+<rect x="430" y="36" rx="12" width="364" height="24" fill="#17a37b"/>
+<text x="990" y="26" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="22" font-weight="900" fill="#12152b" text-anchor="end">26 min</text>
+</g>
+<g transform="translate(60,486)">
+<rect x="0" y="0" rx="18" width="1040" height="96" fill="#ffffff" stroke="#e7e0d4" stroke-width="2"/>
+<text x="30" y="42" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="27" font-weight="800" fill="#12152b">Situational Judgement</text>
+<text x="30" y="74" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="21" font-weight="600" fill="#697386">69 questions · scored 300–900</text>
+<rect x="430" y="36" rx="12" width="560" height="24" fill="#f3eadc"/>
+<rect x="430" y="36" rx="12" width="364" height="24" fill="#8a63ff"/>
+<text x="990" y="26" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="22" font-weight="900" fill="#12152b" text-anchor="end">26 min</text>
+</g>
+<text x="60" y="620" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="600" fill="#697386">Abstract Reasoning was permanently removed from the UCAT in 2025. Time bars shown to scale.</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="600" viewBox="0 0 1160 600" role="img" aria-label="Checklist of seven signs of a great tutor">
+<rect width="1160" height="600" fill="#fbf7ee"/>
+<rect x="40" y="40" rx="28" width="1080" height="520" fill="#ffffff" stroke="#e7e0d4" stroke-width="2"/>
+<text x="80" y="100" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="34" font-weight="900" fill="#12152b" letter-spacing="-1">Signs of a great tutor</text>
+
+<g transform="translate(80,140)">
+<rect x="0" y="-30" rx="12" width="44" height="44" fill="#17a37b" opacity="0.14"/>
+<path d="M 10 -8 l 10 10 l 16 -20" stroke="#17a37b" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="66" y="4" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="27" font-weight="700" fill="#12152b">Explains hard ideas in simple steps</text>
+</g>
+<g transform="translate(80,202)">
+<rect x="0" y="-30" rx="12" width="44" height="44" fill="#17a37b" opacity="0.14"/>
+<path d="M 10 -8 l 10 10 l 16 -20" stroke="#17a37b" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="66" y="4" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="27" font-weight="700" fill="#12152b">Knows the SACE curriculum and marking</text>
+</g>
+<g transform="translate(80,264)">
+<rect x="0" y="-30" rx="12" width="44" height="44" fill="#17a37b" opacity="0.14"/>
+<path d="M 10 -8 l 10 10 l 16 -20" stroke="#17a37b" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="66" y="4" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="27" font-weight="700" fill="#12152b">Has results they can point to</text>
+</g>
+<g transform="translate(80,326)">
+<rect x="0" y="-30" rx="12" width="44" height="44" fill="#17a37b" opacity="0.14"/>
+<path d="M 10 -8 l 10 10 l 16 -20" stroke="#17a37b" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="66" y="4" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="27" font-weight="700" fill="#12152b">Sets a plan, not just homework help</text>
+</g>
+<g transform="translate(80,388)">
+<rect x="0" y="-30" rx="12" width="44" height="44" fill="#17a37b" opacity="0.14"/>
+<path d="M 10 -8 l 10 10 l 16 -20" stroke="#17a37b" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="66" y="4" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="27" font-weight="700" fill="#12152b">Gives honest feedback on progress</text>
+</g>
+<g transform="translate(80,450)">
+<rect x="0" y="-30" rx="12" width="44" height="44" fill="#17a37b" opacity="0.14"/>
+<path d="M 10 -8 l 10 10 l 16 -20" stroke="#17a37b" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="66" y="4" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="27" font-weight="700" fill="#12152b">Your child feels comfortable asking questions</text>
+</g>
+<g transform="translate(80,512)">
+<rect x="0" y="-30" rx="12" width="44" height="44" fill="#17a37b" opacity="0.14"/>
+<path d="M 10 -8 l 10 10 l 16 -20" stroke="#17a37b" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="66" y="4" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="27" font-weight="700" fill="#12152b">Offers a consultation before you commit</text>
+</g>
+</svg>

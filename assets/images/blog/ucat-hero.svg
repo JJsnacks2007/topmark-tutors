@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="What is the UCAT? UCAT ANZ guide for Adelaide students">
+<rect width="1200" height="630" fill="#12152b"/>
+<circle cx="1050" cy="80" r="340" fill="#3658ff" opacity="0.16"/>
+<circle cx="120" cy="580" r="260" fill="#f6c453" opacity="0.10"/>
+<text x="80" y="130" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="30" font-weight="800" fill="#f6c453" letter-spacing="6">UCAT ANZ · 2026 GUIDE</text>
+<text x="80" y="248" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="104" font-weight="900" fill="#ffffff" letter-spacing="-3">What is the</text>
+<text x="80" y="360" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="104" font-weight="900" fill="#f6c453" letter-spacing="-3">UCAT?</text>
+<text x="80" y="428" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="30" font-weight="600" fill="#c9cede">The admissions test for undergraduate medicine,</text>
+<text x="80" y="470" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="30" font-weight="600" fill="#c9cede">dentistry and clinical sciences in Australia &amp; NZ.</text>
+<g font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="24" font-weight="800">
+<rect x="80" y="512" rx="26" width="242" height="52" fill="none" stroke="#f6c453" stroke-opacity="0.55" stroke-width="2"/>
+<text x="201" y="546" fill="#f6c453" text-anchor="middle">4 subtests</text>
+<rect x="342" y="512" rx="26" width="290" height="52" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"/>
+<text x="487" y="546" fill="#ffffff" text-anchor="middle">Under 2 hours</text>
+<rect x="652" y="512" rx="26" width="330" height="52" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"/>
+<text x="817" y="546" fill="#ffffff" text-anchor="middle">Computer-based</text>
+</g>
+<g transform="translate(830,120)">
+<rect x="0" y="0" rx="20" width="290" height="200" fill="#202545" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2"/>
+<rect x="24" y="26" rx="8" width="150" height="16" fill="#ffffff" opacity="0.35"/>
+<rect x="24" y="56" rx="8" width="242" height="16" fill="#ffffff" opacity="0.18"/>
+<rect x="24" y="86" rx="8" width="210" height="16" fill="#ffffff" opacity="0.18"/>
+<circle cx="40" cy="140" r="13" fill="none" stroke="#f6c453" stroke-width="3"/>
+<circle cx="40" cy="140" r="6" fill="#f6c453"/>
+<rect x="66" y="132" rx="8" width="120" height="16" fill="#f6c453" opacity="0.75"/>
+<circle cx="40" cy="172" r="13" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="3"/>
+<rect x="66" y="164" rx="8" width="96" height="16" fill="#ffffff" opacity="0.25"/>
+<g transform="translate(236,146)">
+<circle cx="0" cy="0" r="44" fill="#f6c453"/>
+<line x1="0" y1="0" x2="0" y2="-26" stroke="#12152b" stroke-width="6" stroke-linecap="round"/>
+<line x1="0" y1="0" x2="18" y2="10" stroke="#12152b" stroke-width="6" stroke-linecap="round"/>
+</g>
+</g>
+</svg>

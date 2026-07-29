@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="600" viewBox="0 0 1160 600" role="img" aria-label="How the ATAR is calculated from SACE results in four steps">
+<rect width="1160" height="600" fill="#fbf7ee"/>
+<text x="60" y="66" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="34" font-weight="900" fill="#12152b" letter-spacing="-1">How SACE results become an ATAR</text>
+<text x="60" y="100" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="22" font-weight="600" fill="#697386">Calculated by SATAC for university entry in South Australia</text>
+
+<g transform="translate(60,120)">
+<rect x="0" y="0" rx="18" width="1040" height="92" fill="#ffffff" stroke="#e7e0d4" stroke-width="2"/>
+<circle cx="52" cy="46" r="26" fill="#12152b"/>
+<text x="52" y="56" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="900" fill="#f6c453" text-anchor="middle">1</text>
+<text x="100" y="41" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="800" fill="#12152b">Complete Stage 2 subjects</text>
+<text x="100" y="72" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="20" font-weight="600" fill="#697386">Each 20-credit subject gets a scaled score out of 20</text>
+</g><path d="M 580 208 l 0 18 m -9 -10 l 9 10 l 9 -10" stroke="#3658ff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<g transform="translate(60,232)">
+<rect x="0" y="0" rx="18" width="1040" height="92" fill="#ffffff" stroke="#e7e0d4" stroke-width="2"/>
+<circle cx="52" cy="46" r="26" fill="#12152b"/>
+<text x="52" y="56" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="900" fill="#f6c453" text-anchor="middle">2</text>
+<text x="100" y="41" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="800" fill="#12152b">SATAC takes your best 90 credits</text>
+<text x="100" y="72" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="20" font-weight="600" fill="#697386">Three 20-credit subjects + best 30 credits of flexible options</text>
+</g><path d="M 580 320 l 0 18 m -9 -10 l 9 10 l 9 -10" stroke="#3658ff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<g transform="translate(60,344)">
+<rect x="0" y="0" rx="18" width="1040" height="92" fill="#ffffff" stroke="#e7e0d4" stroke-width="2"/>
+<circle cx="52" cy="46" r="26" fill="#12152b"/>
+<text x="52" y="56" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="900" fill="#f6c453" text-anchor="middle">3</text>
+<text x="100" y="41" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="800" fill="#12152b">Scaled scores form your aggregate</text>
+<text x="100" y="72" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="20" font-weight="600" fill="#697386">A university aggregate out of 90.00</text>
+</g><path d="M 580 432 l 0 18 m -9 -10 l 9 10 l 9 -10" stroke="#3658ff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<g transform="translate(60,456)">
+<rect x="0" y="0" rx="18" width="1040" height="92" fill="#ffffff" stroke="#e7e0d4" stroke-width="2"/>
+<circle cx="52" cy="46" r="26" fill="#12152b"/>
+<text x="52" y="56" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="900" fill="#f6c453" text-anchor="middle">4</text>
+<text x="100" y="41" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="800" fill="#12152b">Aggregate becomes your ATAR</text>
+<text x="100" y="72" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="20" font-weight="600" fill="#697386">A rank from 0 to 99.95 comparing you with your year group</text>
+</g>
+<text x="60" y="580" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="600" fill="#697386">An ATAR of 90.00 means you performed as well as or better than 90% of your age group. Source: satac.edu.au</text>
+</svg>
