@@ -97,3 +97,84 @@ Updated founder subject listings:
 
 - Phone number changed from the 0400 000 000 placeholder to 0450 113 766 site-wide (footers on all pages and the contact page).
 - Click-to-call links updated to tel:+61450113766.
+
+## V17 update
+
+Two separate enquiry forms, both using the same Web3Forms access key:
+
+1. contact.html: general tutoring programs enquiry. Email subject "New tutoring enquiry from the TopMark Tutors website", hidden field form_type=Tutoring programs. Crash Course removed from the preferred-support dropdown and replaced with a link to the Crash Course booking form.
+2. crash-course.html#book: Crash Course expression of interest / booking form. Email subject "CRASH COURSE booking / expression of interest", hidden field form_type=Crash Course.
+
+Crash Course form fields: intent (book now vs send me details first), student name, parent/guardian name, email, phone, year level, subject checkboxes (Biology, Chemistry, Physics, Mathematical Methods), promo code, message. Hidden fields package, price_applied and pricing_window are filled automatically so the emailed enquiry states the exact package and price.
+
+Live pricing calculator: selecting subjects updates the price panel and an inline price chip beside the checkboxes. Early bird prices apply until 6 September 2026 (set in EARLY_END in assets/js/main.js); after that the script automatically switches to standard pricing and drops the strikethrough.
+
+Pricing (all figures are the supplied table plus $50):
+- 1 subject: early $349, standard $399, save $50
+- 2 subjects: early $599, standard $699, save $100
+- 3 subjects: early $799, standard $949, save $150
+- All 4 subjects: early $949, standard $1,149, save $200
+
+Payment details shown on the booking form: TopMark Tutors, BSB 065 175, Account 10542741, reference is the student's full name. Note states the invoice is sent once payment is received.
+
+Crash Course subjects narrowed to Biology, Chemistry, Physics and Mathematical Methods.
+Homepage: early bird promo panel added above the closing call to action, linking to the booking form.
+
+## V18 update
+
+The Crash Course now leads the site.
+
+- Homepage hero replaced with a dark Crash Course hero: early bird tag, subject chips, early bird prices with standard prices struck through, save-up-to-$200 chip, and two calls to action. A side card shows a live countdown to the early bird deadline, the three key dates, and a Book Your Place button.
+- The countdown reads from EARLY_END in assets/js/main.js (6 September 2026). After that date it automatically switches to "Standard pricing now applies".
+- The original brand message ("Academic tutoring built for long-term results") moved directly below the hero as a centred band, keeping the year-round tutoring funnel intact.
+- Site-wide top banner now promotes the Crash Course early bird instead of the free consultation.
+- Homepage Crash Course promo panel moved from below the reviews to above them, so it follows the programs section and breaks up the dark panels.
+- Homepage title and meta description now lead with the Crash Course for search.
+
+## V19 update
+
+Crash Course plan incorporated (public-facing details only; the financial model, tutor pay rates and internal open items from the planning document are deliberately not published).
+
+Added to crash-course.html:
+- Venue and dates: in person at Flinders University City campus, Monday 28 September to Saturday 10 October 2026, inside the SA Term 3 holidays.
+- Format panel: 6 sessions of 2 hours per subject, capped at 10 students per subject, taught by top 1% ATAR achievers and medical students.
+- Session structure section: 90 minute outline walkthrough with a live exam-style question per dot-point, 30 minute timed quiz, and a full mock exam in session 6 marked and returned within 48 hours with a mark-loss breakdown.
+- Full schedule table for all 12 days, showing the paired scheduling (Methods and Physics Mon/Wed/Fri, Chemistry and Biology Tue/Thu/Sat) so multi-subject students have no clashes.
+- Curriculum cards for each subject listing all six sessions plus that subject's SACE exam date.
+- Eight-question FAQ section with FAQPage structured data, plus Course structured data (dates, venue, price tiers) for search.
+
+Lead magnet added:
+- assets/pdfs/topmark-14-sace-dotpoints.pdf (the free guide) with a cover thumbnail at assets/images/guide-cover.png.
+- Gated download sections on the homepage (cream) and crash-course.html (dark). Name and email submit to Web3Forms with subject "Free guide download: 14 SACE dot-points" and form_type=Lead magnet, then the download button is revealed on success.
+- "Free SACE Guide" added to the footer Explore column site-wide, linking to index.html#free-guide.
+
+Homepage hero updated with the venue, dates, session count and cohort cap, and the key-dates card now includes the course run dates.
+
+## V20 update
+
+- Free guide form now collects a phone number as well as first name and email, on both the homepage and the Crash Course page. The field is required and the number is included in the emailed submission.
+- Cohort cap removed everywhere. "Capped at 10 students per subject" is gone from the format panel, the intro copy, the booking section, the final call to action, the homepage hero and the FAQ (including the FAQ structured data). Replaced with "small groups" and "limited places".
+- TopMark textbook added: every student receives a TopMark textbook for each subject they enrol in. Mentioned in the format panel, the intro copy, the session structure intro, the pricing fine print, the meta description, the homepage hero and promo panel, and as a new FAQ ("Do I get any materials to keep?") with matching structured data.
+
+## V21 update
+
+- Free guide PDF rebuilt (assets/pdfs/topmark-14-sace-dotpoints.pdf): the TopMark logo now appears on the cover in a white lockup and as a small mark in every page footer. All em dashes removed from the guide copy. Crash Course pricing on the final page updated to "From $349" and the TopMark textbook inclusion added. Source: /root/work/guide/guide.html, rendered to A4 PDF.
+- Guide cover thumbnail on the website regenerated from the new PDF.
+- Ahmed's founder photo replaced with the new supplied image, cropped to the same 2:3 portrait (1024x1536) used elsewhere.
+- Favicons added: favicon.ico at the site root plus 16, 32, 48, 192 and 512 px PNGs and an apple-touch-icon, generated from the logo emblem. Linked in the head of all 15 pages, with site.webmanifest and a theme-color meta.
+
+## V22 update
+
+- Booking form "Promo code" field renamed to "Promo code or referral source" (field name promo_or_referral), with a placeholder prompting either a code or the referrer's name.
+- New Payment block on the booking form: states that a $99 deposit secures a place with the balance due before the first session, plus a checkbox "I would like to discuss payment options" (field name payment_options).
+- Deposit noted in the price summary panel, the payment details panel, and the pricing fine print.
+- New Referral program section on crash-course.html (#referral, dark panel between pricing and the booking form): $30 for the referrer, 10 per cent off for the referred student, with a three-step how-it-works and a note that referrals are confirmed once the referred student has paid.
+- Two new FAQs with matching structured data: paying a deposit, and how the referral program works.
+- Homepage hero note and promo panel now mention the $99 deposit and the referral offer.
+
+## V23 update
+
+- Fieldset headings on the booking form ("What would you like to do?", "Which subjects?", "Payment") now sit fully on the white card above their cream boxes instead of straddling the border. Done by absolutely positioning the legend above the fieldset (CSS V23 block), which also lets the fieldset draw an unbroken top border and lines the headings up with the other field labels.
+- Flinders University City campus removed as the venue. The crash course now reads "in person in Adelaide" in the hero eyebrow, the format panel, the intro copy, the meta description and the homepage hero line. The venue FAQ now says "In person in Adelaide... We confirm the exact venue with you when you book", and the Course structured data location is Adelaide, SA.
+- The free guide PDF was rebuilt with the same venue change on its final page, and the cover thumbnail regenerated.
+- Note: Flinders references on about.html (the founders as Flinders medical students) and in the UCAT blog post (Flinders as a UCAT university) are credentials and facts, not the venue, and were intentionally left alone.
