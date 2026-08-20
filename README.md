@@ -178,3 +178,14 @@ Homepage hero updated with the venue, dates, session count and cohort cap, and t
 - Flinders University City campus removed as the venue. The crash course now reads "in person in Adelaide" in the hero eyebrow, the format panel, the intro copy, the meta description and the homepage hero line. The venue FAQ now says "In person in Adelaide... We confirm the exact venue with you when you book", and the Course structured data location is Adelaide, SA.
 - The free guide PDF was rebuilt with the same venue change on its final page, and the cover thumbnail regenerated.
 - Note: Flinders references on about.html (the founders as Flinders medical students) and in the UCAT blog post (Flinders as a UCAT university) are credentials and facts, not the venue, and were intentionally left alone.
+
+## V24 update
+
+Favicon work aimed at the icon Google shows beside the search result.
+
+- Emblem re-cropped: the previous crop caught the top of the "T" from the TopMark wordmark, which showed as a small gold smudge at the bottom-left of the icon. The crop now stops above the wordmark and the mark is clean.
+- Extra sizes generated so the icon meets Google's guidance of a square favicon sized as a multiple of 48px: 48, 96, 144, 192 and 512, alongside 16 and 32 for browser tabs. favicon.ico now carries 16/32/48/64/128.
+- All icon links on all 15 pages changed from relative to absolute paths (/favicon.ico, /assets/images/...) and the larger sizes are now declared, so a crawler landing on any page resolves the same icon URLs.
+- site.webmanifest updated with absolute icon paths and a start_url.
+
+Note: Google refreshes search-result favicons on its own recrawl schedule, so the icon can take days to appear even though the files are correct. Requesting indexing for the homepage in Google Search Console is the fastest way to prompt it.
