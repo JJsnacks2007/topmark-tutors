@@ -5,11 +5,12 @@ const navToggle=document.querySelector('.nav-toggle'),mainNav=document.querySele
 const founderCards=document.querySelectorAll('.founder-preview-card');const founderModal=document.getElementById('founderModal');const profilePanels=document.querySelectorAll('.profile-panel');function openFounderProfile(id){if(!founderModal)return;profilePanels.forEach(panel=>panel.classList.toggle('active',panel.id===`profile-${id}`));founderModal.classList.add('open');founderModal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}function closeFounderProfile(){if(!founderModal)return;founderModal.classList.remove('open');founderModal.setAttribute('aria-hidden','true');document.body.style.overflow='';}founderCards.forEach(card=>{card.addEventListener('click',()=>openFounderProfile(card.dataset.founder));card.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openFounderProfile(card.dataset.founder);}});});document.querySelectorAll('[data-close-profile]').forEach(btn=>btn.addEventListener('click',closeFounderProfile));document.addEventListener('keydown',event=>{if(event.key==='Escape')closeFounderProfile();});
 
 
-/* V17: Crash Course live pricing */
+/* V17: Crash Course live pricing (V25: per-hour rate) */
 (function(){const form=document.getElementById('crashForm');if(!form)return;
-const PRICING={1:{e:349,s:399,save:50},2:{e:599,s:699,save:100},3:{e:799,s:949,save:150},4:{e:949,s:1149,save:200}};
+const PRICING={1:{e:349,s:399,save:50,h:12},2:{e:599,s:699,save:100,h:24},3:{e:799,s:949,save:150,h:36},4:{e:949,s:1149,save:200,h:48}};
 const EARLY_END=new Date('2026-09-06T23:59:59+09:30');
 const money=n=>'$'+n.toLocaleString('en-AU');
+const perHour=(total,hours)=>'$'+Math.ceil(total/hours);
 const boxes=form.querySelectorAll('.js-subject');
 const el=id=>document.getElementById(id);
 function update(){
@@ -17,17 +18,18 @@ function update(){
  const n=Math.min(picked.length,4);
  const isEarly=new Date()<=EARLY_END;
  const windowName=isEarly?'Early bird':'Standard';
- const pr=n?PRICING[n]:null;const shown=pr?(isEarly?pr.e:pr.s):0;
- el('subjectCount').innerHTML=n?`<strong>${n} subject${n>1?'s':''} selected:</strong> ${picked.join(', ')} <span class="inline-price">${isEarly?'<s>'+money(pr.s)+'</s> ':''}${money(shown)}${isEarly?' · save '+money(pr.save):''}</span>`:'No subjects selected yet';
  el('sumWindow').textContent=isEarly?'Early bird pricing applies until 6 September.':'Standard pricing applies. Enrolments close 25 September.';
- if(!n){el('sumPkg').textContent='Select your subjects';el('sumOld').textContent='';el('sumNew').textContent='$0';el('sumSave').textContent='';el('fldPackage').value='';el('fldPrice').value='';el('fldWindow').value=windowName;return;}
- const p=PRICING[n];const price=isEarly?p.e:p.s;
- el('sumPkg').textContent=(n===4?'All 4 subjects':n+' subject'+(n>1?'s':''));
- el('sumOld').textContent=isEarly?money(p.s):'';
- el('sumNew').textContent=money(price);
+ if(!n){el('subjectCount').innerHTML='No subjects selected yet';el('sumPkg').textContent='Select your subjects';el('sumNew').textContent='$0';el('sumPerHr').textContent='';el('sumTotal').innerHTML='';el('sumSave').textContent='';el('fldPackage').value='';el('fldPrice').value='';el('fldWindow').value=windowName;return;}
+ const p=PRICING[n];const price=isEarly?p.e:p.s;const rate=perHour(price,p.h);
+ const label=(n===4?'All 4 subjects':n+' subject'+(n>1?'s':''));
+ el('subjectCount').innerHTML=`<strong>${n} subject${n>1?'s':''} selected:</strong> ${picked.join(', ')} <span class="inline-price">${rate}<em>/hr</em> <span>${money(price)} total</span></span>`;
+ el('sumPkg').textContent=label+', '+p.h+' hours of teaching';
+ el('sumNew').textContent=rate;
+ el('sumPerHr').textContent='per hour';
+ el('sumTotal').innerHTML=`<strong>${money(price)}</strong> total${isEarly?' <s>'+money(p.s)+'</s>':''}`;
  el('sumSave').textContent=isEarly?('You save '+money(p.save)):'';
- el('fldPackage').value=(n===4?'All 4 subjects':n+' subject'+(n>1?'s':''))+' ('+picked.join(', ')+')';
- el('fldPrice').value=money(price);
+ el('fldPackage').value=label+' ('+picked.join(', ')+')';
+ el('fldPrice').value=money(price)+' total, '+rate+' per hour across '+p.h+' hours';
  el('fldWindow').value=windowName;
 }
 window.updateCrashPrice=update;
