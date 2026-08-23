@@ -481,3 +481,23 @@
 /* V23: lift fieldset legends above the cream block onto the white card */
 .form-block{position:relative;margin-top:15px}
 .contact-form .form-block>legend{position:absolute;top:-24px;left:1px;padding:0;margin:0;line-height:1.2}
+
+
+/* V25: per-hour pricing */
+.price-hours{margin:0 0 4px;color:var(--muted);font-size:.84rem;font-weight:800}
+.price-new{margin:0 0 6px}
+.price-new .per-hr{font-size:1.1rem;font-weight:900;color:var(--muted);letter-spacing:0;margin-left:2px}
+.price-total{margin:0 0 3px;color:var(--ink);font-size:1.02rem;font-weight:800}
+.price-total strong{font-weight:950}
+.price-card .price-old{margin:0 0 13px;font-size:.85rem}
+.cell-hours{color:var(--muted);font-weight:800;white-space:nowrap}
+.cell-early,.cell-standard{white-space:nowrap}
+.price-table td small{display:block;font-size:.78rem;font-weight:700;color:var(--muted);margin-top:2px}
+.price-table .cell-early small{color:var(--muted)}
+.crash-hero-prices .per-hr,.promo-prices .per-hr{font-size:.98rem;font-weight:900;color:rgba(255,255,255,.66);margin-left:1px}
+.summary-prices .per-hr{color:rgba(255,255,255,.72);font-weight:900;font-size:1rem}
+.summary-total{margin:9px 0 0;color:#fff;font-weight:850;font-size:1.02rem}
+.summary-total strong{font-weight:950}
+.summary-total s{color:rgba(255,255,255,.48);font-weight:800;margin-left:5px}
+.inline-price em{font-style:normal;font-size:.82em;opacity:.75}
+.inline-price>span{color:rgba(255,255,255,.72);font-weight:800;font-size:.86em}
