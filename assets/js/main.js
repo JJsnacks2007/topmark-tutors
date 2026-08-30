@@ -136,6 +136,10 @@ tick();setInterval(tick,30000);})();
     var intent=data.get('enquiry_type');
     if(intent)params.enquiry_type=intent;
 
+    /* In person or online. Same price, but worth knowing which converts. */
+    var mode=data.get('attendance');
+    if(mode)params.attendance=mode;
+
     window.fbq('track','Lead',params,{eventID:eventId()});
   };
 
