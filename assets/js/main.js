@@ -5,10 +5,9 @@ const navToggle=document.querySelector('.nav-toggle'),mainNav=document.querySele
 const founderCards=document.querySelectorAll('.founder-preview-card');const founderModal=document.getElementById('founderModal');const profilePanels=document.querySelectorAll('.profile-panel');function openFounderProfile(id){if(!founderModal)return;profilePanels.forEach(panel=>panel.classList.toggle('active',panel.id===`profile-${id}`));founderModal.classList.add('open');founderModal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}function closeFounderProfile(){if(!founderModal)return;founderModal.classList.remove('open');founderModal.setAttribute('aria-hidden','true');document.body.style.overflow='';}founderCards.forEach(card=>{card.addEventListener('click',()=>openFounderProfile(card.dataset.founder));card.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openFounderProfile(card.dataset.founder);}});});document.querySelectorAll('[data-close-profile]').forEach(btn=>btn.addEventListener('click',closeFounderProfile));document.addEventListener('keydown',event=>{if(event.key==='Escape')closeFounderProfile();});
 
 
-/* V17: Crash Course live pricing (V25: per-hour rate) */
+/* V17: Crash Course live pricing (V29: single price) */
 (function(){const form=document.getElementById('crashForm');if(!form)return;
-const PRICING={1:{e:349,s:399,save:50,h:12},2:{e:599,s:699,save:100,h:24},3:{e:799,s:949,save:150,h:36},4:{e:949,s:1149,save:200,h:48}};
-const EARLY_END=new Date('2026-09-06T23:59:59+09:30');
+const PRICING={1:{p:399,h:12},2:{p:699,h:24},3:{p:949,h:36},4:{p:1149,h:48}};
 const money=n=>'$'+n.toLocaleString('en-AU');
 const perHour=(total,hours)=>'$'+Math.ceil(total/hours);
 const boxes=form.querySelectorAll('.js-subject');
@@ -16,21 +15,16 @@ const el=id=>document.getElementById(id);
 function update(){
  const picked=[...boxes].filter(b=>b.checked).map(b=>b.value);
  const n=Math.min(picked.length,4);
- const isEarly=new Date()<=EARLY_END;
- const windowName=isEarly?'Early bird':'Standard';
- el('sumWindow').textContent=isEarly?'Early bird pricing applies until 6 September.':'Standard pricing applies. Enrolments close 25 September.';
- if(!n){el('subjectCount').innerHTML='No subjects selected yet';el('sumPkg').textContent='Select your subjects';el('sumNew').textContent='$0';el('sumPerHr').textContent='';el('sumTotal').innerHTML='';el('sumSave').textContent='';el('fldPackage').value='';el('fldPrice').value='';el('fldWindow').value=windowName;return;}
- const p=PRICING[n];const price=isEarly?p.e:p.s;const rate=perHour(price,p.h);
+ if(!n){el('subjectCount').innerHTML='No subjects selected yet';el('sumPkg').textContent='Select your subjects';el('sumNew').textContent='$0';el('sumPerHr').textContent='';el('sumTotal').innerHTML='';el('fldPackage').value='';el('fldPrice').value='';return;}
+ const p=PRICING[n];const rate=perHour(p.p,p.h);
  const label=(n===4?'All 4 subjects':n+' subject'+(n>1?'s':''));
- el('subjectCount').innerHTML=`<strong>${n} subject${n>1?'s':''} selected:</strong> ${picked.join(', ')} <span class="inline-price">${rate}<em>/hr</em> <span>${money(price)} total</span></span>`;
+ el('subjectCount').innerHTML=`<strong>${n} subject${n>1?'s':''} selected:</strong> ${picked.join(', ')} <span class="inline-price">${rate}<em>/hr</em> <span>${money(p.p)} total</span></span>`;
  el('sumPkg').textContent=label+', '+p.h+' hours of teaching';
  el('sumNew').textContent=rate;
  el('sumPerHr').textContent='per hour';
- el('sumTotal').innerHTML=`<strong>${money(price)}</strong> total${isEarly?' <s>'+money(p.s)+'</s>':''}`;
- el('sumSave').textContent=isEarly?('You save '+money(p.save)):'';
+ el('sumTotal').innerHTML=`<strong>${money(p.p)}</strong> total`;
  el('fldPackage').value=label+' ('+picked.join(', ')+')';
- el('fldPrice').value=money(price)+' total, '+rate+' per hour across '+p.h+' hours';
- el('fldWindow').value=windowName;
+ el('fldPrice').value=money(p.p)+' total, '+rate+' per hour across '+p.h+' hours';
 }
 window.updateCrashPrice=update;
 boxes.forEach(b=>b.addEventListener('change',update));
@@ -42,11 +36,11 @@ form.querySelectorAll('.js-intent').forEach(r=>r.addEventListener('change',()=>{
 update();})();
 
 
-/* V18: early bird countdown on the homepage hero */
+/* V18: enrolment deadline countdown on the homepage hero */
 (function(){const box=document.getElementById('crashCountdown');if(!box)return;
-const END=new Date('2026-09-06T23:59:59+09:30');
+const END=new Date('2026-09-25T23:59:59+09:30');
 function tick(){const diff=END-new Date();
- if(diff<=0){box.classList.add('is-over');box.innerHTML='<div><strong>Standard pricing now applies</strong><span>Enrolments close 25 September</span></div>';return;}
+ if(diff<=0){box.classList.add('is-over');box.innerHTML='<div><strong>Enrolments are now closed</strong><span>Contact us about future courses</span></div>';return;}
  const d=Math.floor(diff/86400000),h=Math.floor(diff/3600000)%24,m=Math.floor(diff/60000)%60;
  box.innerHTML=`<div><strong>${d}</strong><span>days</span></div><div><strong>${h}</strong><span>hrs</span></div><div><strong>${m}</strong><span>mins</span></div>`;}
 tick();setInterval(tick,30000);})();
