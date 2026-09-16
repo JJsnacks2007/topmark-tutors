@@ -523,3 +523,9 @@
 .res-cta p{color:rgba(255,255,255,.76);max-width:52ch;margin:0 auto 22px}
 .guide-more{font-size:.9rem;color:var(--muted);margin:14px 0 0}
 @media(max-width:980px){.gate-panel{padding:26px}}
+
+
+/* V31: a resource card carrying more than one gated download */
+.res-dl-group{display:none;margin-top:auto;gap:10px;flex-wrap:wrap}
+.is-unlocked .res-dl-group{display:flex}
+.res-dl-group .btn{margin-top:0;flex:1 1 auto}
