@@ -1,5 +1,5 @@
 
-const navToggle=document.querySelector('.nav-toggle'),mainNav=document.querySelector('.main-nav');if(navToggle&&mainNav){navToggle.addEventListener('click',()=>{const isOpen=mainNav.classList.toggle('open');navToggle.setAttribute('aria-expanded',String(isOpen));});}const year=document.getElementById('year');if(year){year.textContent=new Date().getFullYear();}const revealItems=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});},{threshold:.12});revealItems.forEach(item=>observer.observe(item));}else{revealItems.forEach(item=>item.classList.add('visible'));}const track=document.getElementById('reviewTrack'),prev=document.getElementById('reviewPrev'),next=document.getElementById('reviewNext');let reviewIndex=0;function visibleSlides(){if(window.innerWidth<=600)return 1;if(window.innerWidth<=980)return 2;return 3;}function updateCarousel(){if(!track)return;const slides=[...track.querySelectorAll('.review-slide')];if(!slides.length)return;const maxIndex=Math.max(0,slides.length-visibleSlides());reviewIndex=Math.min(reviewIndex,maxIndex);const slideWidth=slides[0].getBoundingClientRect().width;const gap=22;track.style.transform=`translateX(-${reviewIndex*(slideWidth+gap)}px)`;}if(track&&prev&&next){prev.addEventListener('click',()=>{reviewIndex=Math.max(0,reviewIndex-1);updateCarousel();});next.addEventListener('click',()=>{const slides=[...track.querySelectorAll('.review-slide')];const maxIndex=Math.max(0,slides.length-visibleSlides());reviewIndex=Math.min(maxIndex,reviewIndex+1);updateCarousel();});window.addEventListener('resize',updateCarousel);updateCarousel();}document.querySelectorAll('form.js-web3form').forEach(form=>{const status=form.querySelector('.form-status');form.addEventListener('submit',async event=>{event.preventDefault();const endpoint=form.getAttribute('action');if(status){status.textContent='Submitting...';status.className='form-status';}try{const formData=new FormData(form);const response=await fetch(endpoint,{method:'POST',body:formData,headers:{Accept:'application/json'}});if(!response.ok)throw new Error('Form submission failed');if(window.trackMetaLead)window.trackMetaLead(form,formData);form.reset();if(form.id==='crashForm'&&window.updateCrashPrice)window.updateCrashPrice();const rv=form.getAttribute('data-reveal');if(rv){const t=document.getElementById(rv);if(t){t.hidden=false;t.scrollIntoView({behavior:'smooth',block:'nearest'});}}const ul=form.getAttribute('data-unlock');if(ul){const u=document.getElementById(ul);if(u)u.classList.add('is-unlocked');}if(status){status.textContent='Thank you. We have received your submission and will be in touch by email shortly.';status.className='form-status success';}}catch(error){if(status){status.textContent='Something went wrong. Please email Topmarktutors99@gmail.com directly.';status.className='form-status error';}}});});
+const navToggle=document.querySelector('.nav-toggle'),mainNav=document.querySelector('.main-nav');if(navToggle&&mainNav){navToggle.addEventListener('click',()=>{const isOpen=mainNav.classList.toggle('open');navToggle.setAttribute('aria-expanded',String(isOpen));});}const year=document.getElementById('year');if(year){year.textContent=new Date().getFullYear();}const revealItems=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});},{threshold:.12});revealItems.forEach(item=>observer.observe(item));}else{revealItems.forEach(item=>item.classList.add('visible'));}const track=document.getElementById('reviewTrack'),prev=document.getElementById('reviewPrev'),next=document.getElementById('reviewNext');let reviewIndex=0;function visibleSlides(){if(window.innerWidth<=600)return 1;if(window.innerWidth<=980)return 2;return 3;}function updateCarousel(){if(!track)return;const slides=[...track.querySelectorAll('.review-slide')];if(!slides.length)return;const maxIndex=Math.max(0,slides.length-visibleSlides());reviewIndex=Math.min(reviewIndex,maxIndex);const slideWidth=slides[0].getBoundingClientRect().width;const gap=22;track.style.transform=`translateX(-${reviewIndex*(slideWidth+gap)}px)`;}if(track&&prev&&next){prev.addEventListener('click',()=>{reviewIndex=Math.max(0,reviewIndex-1);updateCarousel();});next.addEventListener('click',()=>{const slides=[...track.querySelectorAll('.review-slide')];const maxIndex=Math.max(0,slides.length-visibleSlides());reviewIndex=Math.min(maxIndex,reviewIndex+1);updateCarousel();});window.addEventListener('resize',updateCarousel);updateCarousel();}document.querySelectorAll('form.js-web3form').forEach(form=>{const status=form.querySelector('.form-status');form.addEventListener('submit',async event=>{event.preventDefault();const rq=form.getAttribute('data-require-checked');if(rq&&!form.querySelector(rq+':checked')){if(status){status.textContent='Please tell us what you are preparing for.';status.className='form-status error';}const f=form.querySelector(rq);if(f)f.focus();return;}const endpoint=form.getAttribute('action');if(status){status.textContent='Submitting...';status.className='form-status';}try{const formData=new FormData(form);const response=await fetch(endpoint,{method:'POST',body:formData,headers:{Accept:'application/json'}});if(!response.ok)throw new Error('Form submission failed');if(window.trackMetaLead)window.trackMetaLead(form,formData);form.reset();if(form.id==='crashForm'&&window.updateCrashPrice)window.updateCrashPrice();const rv=form.getAttribute('data-reveal');if(rv){const t=document.getElementById(rv);if(t){t.hidden=false;t.scrollIntoView({behavior:'smooth',block:'nearest'});}}const ul=form.getAttribute('data-unlock');if(ul){const u=document.getElementById(ul);if(u)u.classList.add('is-unlocked');}if(status){status.textContent='Thank you. We have received your submission and will be in touch by email shortly.';status.className='form-status success';}}catch(error){if(status){status.textContent='Something went wrong. Please email Topmarktutors99@gmail.com directly.';status.className='form-status error';}}});});
 
 
 const founderCards=document.querySelectorAll('.founder-preview-card');const founderModal=document.getElementById('founderModal');const profilePanels=document.querySelectorAll('.profile-panel');function openFounderProfile(id){if(!founderModal)return;profilePanels.forEach(panel=>panel.classList.toggle('active',panel.id===`profile-${id}`));founderModal.classList.add('open');founderModal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}function closeFounderProfile(){if(!founderModal)return;founderModal.classList.remove('open');founderModal.setAttribute('aria-hidden','true');document.body.style.overflow='';}founderCards.forEach(card=>{card.addEventListener('click',()=>openFounderProfile(card.dataset.founder));card.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openFounderProfile(card.dataset.founder);}});});document.querySelectorAll('[data-close-profile]').forEach(btn=>btn.addEventListener('click',closeFounderProfile));document.addEventListener('keydown',event=>{if(event.key==='Escape')closeFounderProfile();});
@@ -135,6 +135,10 @@ tick();setInterval(tick,30000);})();
     var mode=data.get('attendance');
     if(mode)params.attendance=mode;
 
+    /* SACE, UCAT or both. Lets audiences be split by what the lead came for. */
+    var seg=data.get('lead_segment');
+    if(seg)params.lead_segment=seg;
+
     window.fbq('track','Lead',params,{eventID:eventId()});
   };
 
@@ -159,4 +163,117 @@ tick();setInterval(tick,30000);})();
       });
     });
   });
+})();
+
+
+/* V32: which stream a free-resources lead came for.
+   The ticks go to Web3Forms as-is; this derives one clean label for filtering
+   and puts it in the email subject so the inbox sorts itself. */
+(function(){
+  var form=document.getElementById('resourceForm');if(!form)return;
+  var boxes=form.querySelectorAll('.js-interest');
+  var seg=document.getElementById('fldSegment');
+  var subj=document.getElementById('fldSubject');
+  var BASE='Free resources unlocked on the TopMark website';
+  function label(){
+    var picked=[];
+    Array.prototype.forEach.call(boxes,function(b){if(b.checked)picked.push(b.value);});
+    if(picked.length>1)return picked.join(' and ');
+    if(picked.length===1)return picked[0]+' only';
+    return '';
+  }
+  function update(){
+    var l=label();
+    if(seg)seg.value=l;
+    if(subj)subj.value=l?('Free resources: '+l):BASE;
+  }
+  Array.prototype.forEach.call(boxes,function(b){b.addEventListener('change',update);});
+  form.addEventListener('reset',function(){setTimeout(update,0);});
+  update();
+})();
+
+
+/* V34: browse the resources by subject.
+   Counts are read off the cards, never hardcoded, so adding a resource keeps
+   the numbers honest on its own. ?subject=<key> deep links in from an ad. */
+(function(){
+  var bar=document.getElementById('resFilter');if(!bar)return;
+  var cards=Array.prototype.slice.call(document.querySelectorAll('.resource-card[data-subject]'));
+  var btns=Array.prototype.slice.call(document.querySelectorAll('[data-filter]'));
+  var pills=Array.prototype.slice.call(bar.querySelectorAll('.filt'));
+  var note=document.getElementById('resFilterCount');
+  var empty=document.getElementById('resEmpty');
+  var eTitle=document.getElementById('resEmptyTitle');
+  var eBody=document.getElementById('resEmptyBody');
+
+  function matches(card,key){
+    if(key==='all')return true;
+    return (' '+card.getAttribute('data-subject')+' ').indexOf(' '+key+' ')>-1;
+  }
+  function countFor(key){
+    var n=0;cards.forEach(function(c){if(matches(c,key))n++;});return n;
+  }
+  function labelFor(key){
+    var p=pills.filter(function(b){return b.getAttribute('data-filter')===key;})[0];
+    if(!p)return key;
+    return p.textContent.replace(/\s*\d+\s*$/,'').replace(/\s*Soon\s*$/,'').trim();
+  }
+
+  /* badge each pill once, on load */
+  pills.forEach(function(p){
+    var n=countFor(p.getAttribute('data-filter'));
+    var badge=p.querySelector('.filt-n');
+    if(badge)badge.textContent=n?String(n):'Soon';
+  });
+
+  function apply(key,push){
+    var shown=0;
+    cards.forEach(function(c){
+      var ok=matches(c,key);
+      c.hidden=!ok;
+      if(ok)shown++;
+    });
+    pills.forEach(function(p){
+      var on=p.getAttribute('data-filter')===key;
+      p.classList.toggle('is-on',on);
+      p.setAttribute('aria-pressed',on?'true':'false');
+    });
+    var name=labelFor(key);
+    if(empty){
+      empty.hidden=shown>0;
+      if(!shown){
+        if(eTitle)eTitle.textContent=name+' resources are on the way.';
+        if(eBody)eBody.textContent='We are building the '+name+' library now. Sign up above '+
+          'and we will send it the moment it lands.';
+      }
+    }
+    if(note){
+      note.textContent=shown?
+        (key==='all'?('Showing all '+shown+' resources'):
+          ('Showing '+shown+' '+name+' resource'+(shown===1?'':'s'))):
+        ('No '+name+' resources yet');
+    }
+    if(push&&window.history&&history.replaceState){
+      var u=new URL(window.location.href);
+      if(key==='all')u.searchParams.delete('subject');else u.searchParams.set('subject',key);
+      history.replaceState(null,'',u.pathname+u.search+u.hash);
+    }
+  }
+
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      var key=b.getAttribute('data-filter');
+      apply(key,true);
+      /* the "show all" button sits below the fold once the grid is empty */
+      if(!b.classList.contains('filt'))bar.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+
+  /* deep link: resources.html?subject=chemistry */
+  var want='all';
+  try{
+    var q=new URL(window.location.href).searchParams.get('subject');
+    if(q&&pills.some(function(p){return p.getAttribute('data-filter')===q;}))want=q;
+  }catch(e){}
+  apply(want,false);
 })();
