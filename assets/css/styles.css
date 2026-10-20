@@ -564,3 +564,150 @@
   .filt{padding:9px 14px;font-size:.93rem;gap:7px}
   .res-empty{padding:32px 22px}
 }
+
+
+/* V35: UCAT pivot. Three small additions only, everything else reuses
+   existing components (page-hero, deadline-strip, method-card, price-card,
+   referral-card, faq-item, guide-section, promo-panel, countdown). */
+
+/* the waitlist form sits inside a deadline-strip, which is a dark band */
+#finished{padding:34px 0}
+#finished h2{color:#fff;font-size:clamp(1.35rem,3vw,1.9rem)}
+#finished p{color:rgba(255,255,255,.82);font-weight:700;margin:0 auto 18px;max-width:56ch}
+#finished .guide-form{max-width:760px;margin:0 auto}
+#finished .guide-form input{background:#fff}
+#finished .card-note{color:rgba(255,255,255,.72);margin-top:14px}
+#finished .card-note a{color:var(--gold)}
+
+/* tutor portrait: .founder-photo is a fixed-height banner crop built for the
+   About page grid, which mangles a portrait here. */
+.tutor-portrait{width:min(300px,78%);border-radius:24px;display:block;background:var(--cream-2);box-shadow:var(--shadow)}
+
+/* the hero card is designed for the dark hero. info-card is the same component
+   on a light section: same shape and spacing, readable colours. */
+.crash-hero-card.info-card{background:var(--white);border:1px solid var(--line);box-shadow:var(--shadow);backdrop-filter:none;color:var(--ink)}
+.crash-hero-card.info-card .eyebrow.light{color:var(--blue)}
+.crash-hero-card.info-card .key-dates dt{color:var(--muted)}
+.crash-hero-card.info-card .key-dates dd{color:var(--ink);font-weight:900}
+.crash-hero-card.info-card .card-note{color:var(--muted)}
+.crash-hero-card.info-card .card-note a{color:var(--blue)}
+
+
+/* the 1-on-1 comparison line under the price grid */
+.price-compare{margin:22px auto 0;max-width:62ch;text-align:center;font-weight:800;color:var(--ink);background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:16px 20px;line-height:1.55}
+
+/* the UCAT deadline strip carries three dates, not two */
+@media(max-width:700px){.deadline-inner{flex-wrap:wrap}}
+
+
+/* V36: corrections.
+   No early bird, two class types, and three real layout bugs fixed. */
+
+/* 1. The stylesheet has img{max-width:100%} with no height:auto, so an <img>
+      with a height attribute keeps that attribute as its height. The tutor
+      portrait was rendering 1100px tall inside a 300px box. */
+.tutor-portrait{width:min(300px,78%);height:auto;border-radius:24px;display:block;background:var(--cream-2);box-shadow:var(--shadow)}
+
+/* 2. A 312px card beside a 1650px form stranded half a column of nothing.
+      Sticky keeps it with the form instead. */
+@media(min-width:981px){
+  .booking-layout .info-card{position:sticky;top:104px}
+}
+
+/* 3. .price-grid is a fixed four-column track, so two cards sat squashed in
+      the left half. */
+.price-grid.two-up{grid-template-columns:repeat(2,minmax(0,1fr));max-width:760px;margin-left:auto;margin-right:auto}
+@media(max-width:700px){.price-grid.two-up{grid-template-columns:1fr}}
+
+/* what each class actually is, under its price */
+.price-desc{margin:10px 0 0;color:var(--muted);font-size:.9rem;font-weight:700;line-height:1.55}
+
+/* a short heading should not sit in a full-width band */
+.section-intro{max-width:760px;margin-left:auto;margin-right:auto}
+
+/* the class picker reuses .check-item inside a radio-row */
+.radio-row .check-item span{display:grid;gap:3px}
+.radio-row .check-item strong{color:var(--ink);font-weight:900}
+.radio-row .check-item small{color:var(--muted);font-weight:700;line-height:1.4}
+
+
+/* V37: .method-grid is a fixed three-column track, so a four-card grid wrapped
+   3+1 and left an orphan on its own row. Two of them did. */
+.method-grid.four-up{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media(max-width:1100px){.method-grid.four-up{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.method-grid.four-up{grid-template-columns:1fr}}
+
+
+/* V38: blocks that butted together inside a section.
+   Measured, not guessed: the workshop card row sat flush against the
+   registration form, and the pricing fine print sat flush against the
+   enrolment form. Scoped to the pairs that were actually touching. */
+.method-grid + .booking-layout,
+.section > .container + .booking-layout{margin-top:40px}
+.method-grid + .container{margin-top:30px}
+
+/* the UCAT result, stated with the year so it reads against the right scale */
+.tutor-score{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin:0 0 18px}
+.tutor-score strong{font-size:1.9rem;font-weight:950;letter-spacing:-.04em;color:var(--ink);line-height:1}
+.tutor-score span{font-weight:900;color:var(--blue);font-size:1rem}
+.tutor-score small{flex:1 1 100%;color:var(--muted);font-weight:700;font-size:.84rem}
+
+
+/* V39: his one line, given a little weight without turning it into a testimonial */
+.tutor-quote{border-left:3px solid var(--gold);padding-left:16px;margin:18px 0 0;color:var(--ink);font-weight:800}
+
+
+/* V41 fixes. */
+
+/* 1. The page-hero lead had max-width:690px and no auto margins, so inside an
+      830px centred container it sat 70px left of centre while its own text was
+      centre-aligned. That is the "off centre" on the resources page. */
+.page-hero .lead,.page-hero .container.narrow>p{margin-left:auto;margin-right:auto}
+
+/* 2. With nine items the nav links and the Book Free Call button were wrapping
+      their own text onto two lines at every desktop width. Keep each label on
+      one line, then buy the space back by tightening the gap as it gets narrow. */
+.main-nav a,.nav-cta,.brand-text strong,.brand-text small{white-space:nowrap}
+.brand{flex:0 0 auto}
+@media(min-width:981px) and (max-width:1400px){
+  .main-nav{gap:14px;font-size:.94rem}
+  .nav-wrap{gap:18px}
+}
+@media(min-width:981px) and (max-width:1260px){
+  .main-nav{gap:11px;font-size:.9rem}
+  .nav-wrap{gap:14px}
+  .nav-cta{padding-left:16px;padding-right:16px;font-size:.92rem}
+}
+@media(min-width:981px) and (max-width:1200px){
+  /* nine items will not fit here. Collapse the nav to the menu button, but
+     only the nav: the grid rules in the 980px block stay where they are. */
+  .nav-cta{display:none}
+  .nav-toggle{display:block}
+  .main-nav{position:absolute;top:82px;left:20px;right:20px;display:none;flex-direction:column;align-items:stretch;gap:0;background:white;border:1px solid var(--line);border-radius:22px;padding:14px;box-shadow:var(--shadow);font-size:1rem}
+  .main-nav.open{display:flex}
+  .main-nav a{padding:12px 14px}
+}
+
+/* Book a Free Call lives in the menu once the header button is hidden, so it
+   is not lost on narrow screens the way it was before. */
+.nav-only-menu{display:none}
+@media(max-width:1200px){.main-nav .nav-only-menu{display:block}}
+
+/* 3. "First class free" on the lecture card, in the free/gold register rather
+      than the blue used for the recommended option */
+.best-tag.is-free{background:var(--gold);color:var(--ink)}
+
+
+/* V42: the free first class, at the size an offer this good deserves.
+   Its own band rather than reusing .referral-section, which the crash course
+   page still uses for its 2026 record. */
+.free-band{background:radial-gradient(circle at 85% 12%,rgba(246,196,83,.22),transparent 46%),linear-gradient(135deg,var(--ink),var(--ink-2));color:#fff;padding:84px 0}
+.free-band .eyebrow.light{color:var(--gold)}
+.free-head{font-size:clamp(2.5rem,6.2vw,4.4rem);line-height:1.02;letter-spacing:-.045em;margin:0 0 20px;color:#fff}
+.free-head em{font-style:normal;color:var(--gold)}
+.free-lead{font-size:clamp(1.04rem,1.7vw,1.28rem);color:rgba(255,255,255,.82);max-width:56ch;margin:0 auto 32px;font-weight:700;line-height:1.6}
+.free-points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:740px;margin:0 auto 34px;text-align:center}
+.free-points div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:22px 16px}
+.free-points strong{display:block;font-size:1.55rem;font-weight:950;color:var(--gold);letter-spacing:-.03em;line-height:1}
+.free-points span{display:block;margin-top:8px;font-size:.87rem;font-weight:800;color:rgba(255,255,255,.72);line-height:1.45}
+@media(max-width:700px){.free-band{padding:58px 0}.free-points{grid-template-columns:1fr;gap:10px}}
