@@ -1,5 +1,5 @@
 
-const navToggle=document.querySelector('.nav-toggle'),mainNav=document.querySelector('.main-nav');if(navToggle&&mainNav){navToggle.addEventListener('click',()=>{const isOpen=mainNav.classList.toggle('open');navToggle.setAttribute('aria-expanded',String(isOpen));});}const year=document.getElementById('year');if(year){year.textContent=new Date().getFullYear();}const revealItems=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});},{threshold:.12});revealItems.forEach(item=>observer.observe(item));}else{revealItems.forEach(item=>item.classList.add('visible'));}const track=document.getElementById('reviewTrack'),prev=document.getElementById('reviewPrev'),next=document.getElementById('reviewNext');let reviewIndex=0;function visibleSlides(){if(window.innerWidth<=600)return 1;if(window.innerWidth<=980)return 2;return 3;}function updateCarousel(){if(!track)return;const slides=[...track.querySelectorAll('.review-slide')];if(!slides.length)return;const maxIndex=Math.max(0,slides.length-visibleSlides());reviewIndex=Math.min(reviewIndex,maxIndex);const slideWidth=slides[0].getBoundingClientRect().width;const gap=22;track.style.transform=`translateX(-${reviewIndex*(slideWidth+gap)}px)`;}if(track&&prev&&next){prev.addEventListener('click',()=>{reviewIndex=Math.max(0,reviewIndex-1);updateCarousel();});next.addEventListener('click',()=>{const slides=[...track.querySelectorAll('.review-slide')];const maxIndex=Math.max(0,slides.length-visibleSlides());reviewIndex=Math.min(maxIndex,reviewIndex+1);updateCarousel();});window.addEventListener('resize',updateCarousel);updateCarousel();}document.querySelectorAll('form.js-web3form').forEach(form=>{const status=form.querySelector('.form-status');form.addEventListener('submit',async event=>{event.preventDefault();const rq=form.getAttribute('data-require-checked');if(rq&&!form.querySelector(rq+':checked')){if(status){status.textContent='Please tell us what you are preparing for.';status.className='form-status error';}const f=form.querySelector(rq);if(f)f.focus();return;}const endpoint=form.getAttribute('action');if(status){status.textContent='Submitting...';status.className='form-status';}try{const formData=new FormData(form);const response=await fetch(endpoint,{method:'POST',body:formData,headers:{Accept:'application/json'}});if(!response.ok)throw new Error('Form submission failed');if(window.trackMetaLead)window.trackMetaLead(form,formData);form.reset();if(form.id==='crashForm'&&window.updateCrashPrice)window.updateCrashPrice();const rv=form.getAttribute('data-reveal');if(rv){const t=document.getElementById(rv);if(t){t.hidden=false;t.scrollIntoView({behavior:'smooth',block:'nearest'});}}const ul=form.getAttribute('data-unlock');if(ul){const u=document.getElementById(ul);if(u)u.classList.add('is-unlocked');}if(status){status.textContent='Thank you. We have received your submission and will be in touch by email shortly.';status.className='form-status success';}}catch(error){if(status){status.textContent='Something went wrong. Please email Topmarktutors99@gmail.com directly.';status.className='form-status error';}}});});
+const navToggle=document.querySelector('.nav-toggle'),mainNav=document.querySelector('.main-nav');if(navToggle&&mainNav){navToggle.addEventListener('click',()=>{const isOpen=mainNav.classList.toggle('open');navToggle.setAttribute('aria-expanded',String(isOpen));});}const year=document.getElementById('year');if(year){year.textContent=new Date().getFullYear();}const revealItems=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});},{threshold:.12});revealItems.forEach(item=>observer.observe(item));}else{revealItems.forEach(item=>item.classList.add('visible'));}const track=document.getElementById('reviewTrack'),prev=document.getElementById('reviewPrev'),next=document.getElementById('reviewNext');let reviewIndex=0;function visibleSlides(){if(window.innerWidth<=600)return 1;if(window.innerWidth<=980)return 2;return 3;}function updateCarousel(){if(!track)return;const slides=[...track.querySelectorAll('.review-slide')];if(!slides.length)return;const maxIndex=Math.max(0,slides.length-visibleSlides());reviewIndex=Math.min(reviewIndex,maxIndex);const slideWidth=slides[0].getBoundingClientRect().width;const gap=22;track.style.transform=`translateX(-${reviewIndex*(slideWidth+gap)}px)`;}if(track&&prev&&next){prev.addEventListener('click',()=>{reviewIndex=Math.max(0,reviewIndex-1);updateCarousel();});next.addEventListener('click',()=>{const slides=[...track.querySelectorAll('.review-slide')];const maxIndex=Math.max(0,slides.length-visibleSlides());reviewIndex=Math.min(maxIndex,reviewIndex+1);updateCarousel();});window.addEventListener('resize',updateCarousel);updateCarousel();}document.querySelectorAll('form.js-web3form').forEach(form=>{const status=form.querySelector('.form-status');form.addEventListener('submit',async event=>{event.preventDefault();const rq=form.getAttribute('data-require-checked');if(rq&&!form.querySelector(rq+':checked')){if(status){status.textContent=form.getAttribute('data-require-message')||'Please tell us what you are preparing for.';status.className='form-status error';}const f=form.querySelector(rq);if(f)f.focus();return;}const endpoint=form.getAttribute('action');if(status){status.textContent='Submitting...';status.className='form-status';}try{const formData=new FormData(form);const response=await fetch(endpoint,{method:'POST',body:formData,headers:{Accept:'application/json'}});if(!response.ok)throw new Error('Form submission failed');if(window.trackMetaLead)window.trackMetaLead(form,formData);form.reset();if(form.id==='crashForm'&&window.updateCrashPrice)window.updateCrashPrice();const rv=form.getAttribute('data-reveal');if(rv){const t=document.getElementById(rv);if(t){t.hidden=false;t.scrollIntoView({behavior:'smooth',block:'nearest'});}}const ul=form.getAttribute('data-unlock');if(ul){const u=document.getElementById(ul);if(u)u.classList.add('is-unlocked');}if(status){status.textContent='Thank you. We have received your submission and will be in touch by email shortly.';status.className='form-status success';}}catch(error){if(status){status.textContent='Something went wrong. Please email Topmarktutors99@gmail.com directly.';status.className='form-status error';}}});});
 
 
 const founderCards=document.querySelectorAll('.founder-preview-card');const founderModal=document.getElementById('founderModal');const profilePanels=document.querySelectorAll('.profile-panel');function openFounderProfile(id){if(!founderModal)return;profilePanels.forEach(panel=>panel.classList.toggle('active',panel.id===`profile-${id}`));founderModal.classList.add('open');founderModal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}function closeFounderProfile(){if(!founderModal)return;founderModal.classList.remove('open');founderModal.setAttribute('aria-hidden','true');document.body.style.overflow='';}founderCards.forEach(card=>{card.addEventListener('click',()=>openFounderProfile(card.dataset.founder));card.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openFounderProfile(card.dataset.founder);}});});document.querySelectorAll('[data-close-profile]').forEach(btn=>btn.addEventListener('click',closeFounderProfile));document.addEventListener('keydown',event=>{if(event.key==='Escape')closeFounderProfile();});
@@ -36,11 +36,17 @@ form.querySelectorAll('.js-intent').forEach(r=>r.addEventListener('change',()=>{
 update();})();
 
 
-/* V18: enrolment deadline countdown on the homepage hero */
+/* V18: deadline countdown on the homepage hero.
+   V35: retargeted from the Crash Course close to the free UCAT workshop.
+   Two dates matter this season, both AEDT (UTC+11):
+     workshop start   2026-11-14T11:00:00+11:00   <- live now
+     enrolments close 2026-11-30T23:59:59+11:00
+   There is no early bird. To retarget, change END to the next date and change
+   the hero label "Free workshop starts in" in index.html to match. */
 (function(){const box=document.getElementById('crashCountdown');if(!box)return;
-const END=new Date('2026-09-25T23:59:59+09:30');
+const END=new Date('2026-11-14T11:00:00+11:00');
 function tick(){const diff=END-new Date();
- if(diff<=0){box.classList.add('is-over');box.innerHTML='<div><strong>Enrolments are now closed</strong><span>Contact us about future courses</span></div>';return;}
+ if(diff<=0){box.classList.add('is-over');box.innerHTML='<div><strong>The workshop has started</strong><span>Enrol in the UCAT Online Course</span></div>';return;}
  const d=Math.floor(diff/86400000),h=Math.floor(diff/3600000)%24,m=Math.floor(diff/60000)%60;
  box.innerHTML=`<div><strong>${d}</strong><span>days</span></div><div><strong>${h}</strong><span>hrs</span></div><div><strong>${m}</strong><span>mins</span></div>`;}
 tick();setInterval(tick,30000);})();
@@ -56,7 +62,11 @@ tick();setInterval(tick,30000);})();
     guideFormDark:{name:'Free SACE Guide',      category:'Lead magnet'},
     crashForm:    {name:'Crash Course booking', category:'Crash Course'},
     contactForm:  {name:'General enquiry',      category:'Tutoring'},
-    resourceForm: {name:'Free resources',       category:'Lead magnet'}
+    resourceForm: {name:'Free resources',       category:'Lead magnet'},
+    ucatEnrolForm:{name:'UCAT Course enrolment',category:'UCAT'},
+    ucatPackForm: {name:'Free UCAT pack',       category:'Lead magnet'},
+    workshopForm: {name:'Med and Dent workshop', category:'UCAT'},
+    waitlistForm: {name:'Crash Course waitlist',category:'Crash Course'}
   };
 
   function ready(){return typeof window.fbq==='function'&&!!window.TM_PIXEL_ID;}
@@ -150,6 +160,13 @@ tick();setInterval(tick,30000);})();
     if(document.getElementById('pricing')){
       window.fbq('track','ViewContent',{
         content_name:'Crash Course pricing',content_category:'Crash Course'
+      });
+    }
+
+    /* Same, for the UCAT course pricing block. */
+    if(document.getElementById('enrol')){
+      window.fbq('track','ViewContent',{
+        content_name:'UCAT Online Course pricing',content_category:'UCAT'
       });
     }
 
@@ -276,4 +293,30 @@ tick();setInterval(tick,30000);})();
     if(q&&pills.some(function(p){return p.getAttribute('data-filter')===q;}))want=q;
   }catch(e){}
   apply(want,false);
+})();
+
+
+/* V35: enrol intent on the UCAT course.
+   The workshop and pack forms already fire Lead through the shared handler.
+   An Enrol click is a step further down the funnel but stops short of payment,
+   which happens by bank transfer off-site, so InitiateCheckout is the honest
+   event: intent to buy, not a completed purchase. Fires once per page. */
+(function(){
+  var fired=false;
+  document.addEventListener('click',function(e){
+    var a=e.target&&e.target.closest?e.target.closest('.js-enrol'):null;
+    if(!a||fired)return;
+    if(typeof window.fbq!=='function'||!window.TM_PIXEL_ID)return;
+    fired=true;
+    window.fbq('track','InitiateCheckout',{
+      content_name:'UCAT Online Course',
+      content_category:'UCAT',
+      content_ids:['ucat-online-course'],
+      currency:'AUD'
+      /* Classes are priced individually ($35 lecture, $45 workshop) and a lead
+         can take either or both, so there is no single value to send at click
+         time. If you later want revenue optimisation, read the ticked classes
+         off the enrolment form and sum them. */
+    });
+  },true);
 })();
