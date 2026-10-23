@@ -711,3 +711,14 @@
 .free-points strong{display:block;font-size:1.55rem;font-weight:950;color:var(--gold);letter-spacing:-.03em;line-height:1}
 .free-points span{display:block;margin-top:8px;font-size:.87rem;font-weight:800;color:rgba(255,255,255,.72);line-height:1.45}
 @media(max-width:700px){.free-band{padding:58px 0}.free-points{grid-template-columns:1fr;gap:10px}}
+
+
+/* V44: three price cards, so the fixed four-column track needs a three-up
+   variant the same way two-up was added in V36. */
+.price-grid.three-up{grid-template-columns:repeat(3,minmax(0,1fr));max-width:1000px;margin-left:auto;margin-right:auto}
+@media(max-width:900px){.price-grid.three-up{grid-template-columns:1fr;max-width:460px}}
+
+/* the waitlist sits on a dark band, so its extra field needs the same treatment
+   as the others in that row */
+#finished .guide-fields{grid-template-columns:repeat(2,1fr) auto}
+@media(max-width:820px){#finished .guide-fields{grid-template-columns:1fr}}
