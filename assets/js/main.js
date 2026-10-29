@@ -39,14 +39,16 @@ update();})();
 /* V18: deadline countdown on the homepage hero.
    V35: retargeted from the Crash Course close to the free UCAT workshop.
    Two dates matter this season, both AEDT (UTC+11):
-     workshop start   2026-11-14T11:00:00+11:00   <- live now
-     enrolments close 2026-11-30T23:59:59+11:00
-   There is no early bird. To retarget, change END to the next date and change
-   the hero label "Free workshop starts in" in index.html to match. */
+     workshop start   2026-11-14T11:00:00+11:00
+     enrolments close 2026-11-30T23:59:59+11:00   <- live now
+   v45: the homepage is about the course, so the countdown runs to the
+   enrolment deadline rather than the workshop. To put it back on the
+   workshop, swap END below and change the hero label "Enrolments close in"
+   in index.html to match. */
 (function(){const box=document.getElementById('crashCountdown');if(!box)return;
-const END=new Date('2026-11-14T11:00:00+11:00');
+const END=new Date('2026-11-30T23:59:59+11:00');
 function tick(){const diff=END-new Date();
- if(diff<=0){box.classList.add('is-over');box.innerHTML='<div><strong>The workshop has started</strong><span>Enrol in the UCAT Online Course</span></div>';return;}
+ if(diff<=0){box.classList.add('is-over');box.innerHTML='<div><strong>Enrolments are now closed</strong><span>Contact us about the next intake</span></div>';return;}
  const d=Math.floor(diff/86400000),h=Math.floor(diff/3600000)%24,m=Math.floor(diff/60000)%60;
  box.innerHTML=`<div><strong>${d}</strong><span>days</span></div><div><strong>${h}</strong><span>hrs</span></div><div><strong>${m}</strong><span>mins</span></div>`;}
 tick();setInterval(tick,30000);})();
@@ -319,4 +321,38 @@ tick();setInterval(tick,30000);})();
          off the enrolment form and sum them. */
     });
   },true);
+})();
+
+
+/* V45: the Tutoring dropdown.
+   Hover opens it on desktop through CSS alone; this adds click and keyboard,
+   which is what the collapsed menu and anyone not using a mouse needs. */
+(function(){
+  var groups=Array.prototype.slice.call(document.querySelectorAll('.nav-group'));
+  if(!groups.length)return;
+  function closeAll(except){
+    groups.forEach(function(g){
+      if(g===except)return;
+      g.classList.remove('open');
+      var b=g.querySelector('.nav-drop');
+      if(b)b.setAttribute('aria-expanded','false');
+    });
+  }
+  groups.forEach(function(g){
+    var btn=g.querySelector('.nav-drop');
+    if(!btn)return;
+    btn.addEventListener('click',function(e){
+      e.preventDefault();
+      var open=!g.classList.contains('open');
+      closeAll(g);
+      g.classList.toggle('open',open);
+      btn.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest||!e.target.closest('.nav-group'))closeAll(null);
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape')closeAll(null);
+  });
 })();
