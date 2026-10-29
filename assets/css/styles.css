@@ -723,3 +723,74 @@
 #finished .guide-fields{grid-template-columns:repeat(2,minmax(0,1fr))}
 #finished .guide-fields .btn{grid-column:1/-1}
 @media(max-width:620px){#finished .guide-fields{grid-template-columns:1fr}}
+
+
+/* V45: simplification.
+   Six nav items instead of nine, with a dropdown, so the desktop nav comes
+   back from 1081px up. It used to need 1201px. Below that the menu button
+   takes over, which is the V41 rule still doing its job. */
+@media(min-width:1081px) and (max-width:1200px){
+  .nav-cta{display:inline-flex}
+  .nav-toggle{display:none}
+  .main-nav{position:static;flex-direction:row;align-items:center;display:flex;background:none;border:0;border-radius:0;padding:0;box-shadow:none;gap:16px;font-size:.93rem}
+  .main-nav>a{padding:0}
+}
+@media(min-width:1081px) and (max-width:1160px){
+  .main-nav{gap:12px;font-size:.89rem}
+  .nav-drop{font-size:.87rem}
+  .nav-wrap{gap:12px}
+  .nav-cta{padding-left:15px;padding-right:15px;font-size:.89rem}
+}
+
+/* the Tutoring dropdown */
+.nav-group{position:relative;display:flex;align-items:center}
+.nav-drop{display:inline-flex;align-items:center;gap:6px;background:none;border:0;padding:0;margin:0;font:inherit;font-weight:780;color:#454c63;font-size:.94rem;cursor:pointer;white-space:nowrap}
+.nav-drop:hover,.nav-drop.active,.nav-group.open .nav-drop{color:var(--blue)}
+.nav-drop .caret{width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translate(-1px,-1px);transition:transform .15s}
+.nav-group.open .nav-drop .caret{transform:rotate(-135deg) translate(-2px,-2px)}
+.nav-menu{position:absolute;top:calc(100% + 14px);left:-18px;min-width:212px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:8px;box-shadow:var(--shadow);display:none;flex-direction:column;z-index:60}
+.nav-group:hover .nav-menu,.nav-group:focus-within .nav-menu,.nav-group.open .nav-menu{display:flex}
+.nav-menu a{padding:10px 14px;border-radius:12px;font-size:.94rem}
+.nav-menu a:hover{background:var(--cream)}
+/* a hover bridge, so the pointer can cross the gap without the menu closing */
+.nav-group::after{content:"";position:absolute;top:100%;left:0;right:0;height:16px}
+
+/* inside the collapsed menu the dropdown just nests */
+@media(max-width:980px){
+  .nav-group{display:block}
+  .nav-drop{width:100%;justify-content:space-between;padding:12px 14px}
+  .nav-menu{position:static;display:none;border:0;border-radius:0;box-shadow:none;padding:0 0 6px 12px;min-width:0}
+  .nav-group.open .nav-menu{display:flex}
+  .nav-group:hover .nav-menu:not(.is-open){display:none}
+  .nav-group.open:hover .nav-menu{display:flex}
+  .nav-group::after{content:none}
+}
+
+/* contact details on the closing band */
+.cta-contact{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
+.cta-contact li{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.cta-contact span{min-width:66px;font-size:.76rem;letter-spacing:.09em;text-transform:uppercase;font-weight:900;color:var(--gold)}
+.cta-contact a,.cta-contact li{color:#fff;font-weight:850}
+.cta-contact a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+.cta-contact a:hover{border-bottom-color:var(--gold);color:var(--gold)}
+
+
+/* V46: the contact details, as three plain tiles at the top of the page that
+   absorbed contact.html. Deliberately not a card with a sticky aside: a parent
+   looking for a phone number should find it without scrolling or reading. */
+.contact-strip{padding-top:40px}
+.contact-tiles{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.contact-tiles li{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px;box-shadow:0 18px 50px rgba(18,21,43,.07)}
+.contact-tiles span{display:block;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;font-weight:900;color:var(--blue);margin-bottom:10px}
+.contact-tiles a,.contact-tiles p{display:block;font-size:1.08rem;font-weight:900;color:var(--ink);text-decoration:none;margin:0;line-height:1.4;word-break:break-word}
+.contact-tiles a:hover{color:var(--blue)}
+.contact-tiles small{display:block;margin-top:8px;font-size:.87rem;font-weight:750;color:var(--muted);line-height:1.45}
+@media(max-width:860px){.contact-tiles{grid-template-columns:1fr;gap:14px}.contact-tiles li{padding:20px 22px}}
+
+/* the three homepage price tiles are a flex row, so they wrapped 2 + 1 and
+   read as a mistake. An even three-up row on desktop, stacked on narrow. */
+@media(min-width:861px){.promo-prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* the enquiry form now sits in a plain centred column rather than beside a
+   sticky card, so it does not need the two-column grid it inherited */
+#enquiry .contact-form{max-width:720px;margin-left:auto;margin-right:auto}
