@@ -41,13 +41,13 @@
 </div>
 <div class="container"><p class="price-compare">One hour of 1-on-1 UCAT tutoring normally costs $80. Both classes together are $75 a week.</p>
 <p class="price-fineprint">Your first class is free. Prices are per student. Payment is by bank transfer and we send an invoice. Enrolments close Monday 30 November, 11:59pm.</p>
-<div class="hero-actions" style="justify-content:center"><a class="btn btn-primary js-enrol" href="#enrol-form">Enrol Now</a><a class="btn btn-outline" href="workshop.html">Come to the Free Workshop First</a></div></div>
+<div class="big-actions"><a class="big-cta js-enrol" href="#enrol-form"><strong>Sign Up for Your First Free UCAT Class</strong><span>Free. Nothing to pay, nothing to cancel, and you decide after it.</span></a><a class="big-cta big-cta-alt" href="workshop.html#register"><strong>Sign Up for the Medicine and Dentistry Entry Workshop</strong><span>A separate free workshop on Saturday 14 November, 11am, on Google Meet.</span></a></div></div>
 
 </section>
 
-<section class="section section-cream" id="enrol-form"><div class="container section-intro"><p class="eyebrow">Sign up</p><h2>Enrol in the UCAT Online Course.</h2><p>Tell us which classes you want and we will send the bank transfer details. Nothing is payable until after your free first class.</p></div>
+<section class="section section-cream" id="enrol-form"><div class="container section-intro"><p class="eyebrow">Sign up</p><h2>Enrol in the UCAT Online Course.</h2><p>Sign up just for the free first class, or tell us which classes you want and we will send the bank transfer details. Nothing is payable until after your free first class.</p></div>
 <div class="container booking-layout">
-<form class="contact-form js-web3form" id="ucatEnrolForm" action="https://api.web3forms.com/submit" method="POST" data-reveal="ucatEnrolReady" data-require-checked=".js-ucat-class" data-require-message="Pick at least one class type so we know what to quote you.">
+<form class="contact-form js-web3form" id="ucatEnrolForm" action="https://api.web3forms.com/submit" method="POST" data-reveal="ucatEnrolReady" data-require-checked=".js-ucat-class" data-require-message="Pick at least one option so we know what to put you down for.">
 <input type="hidden" name="access_key" value="df4c3ef9-899d-4911-9a61-2ef1ca2818fe">
 <input type="hidden" name="subject" value="UCAT ONLINE COURSE enrolment / expression of interest">
 <input type="hidden" name="from_name" value="TopMark UCAT Course">
@@ -64,11 +64,12 @@
 <label>Email<input type="email" name="email" required placeholder="you@example.com"></label>
 <label>Phone number<input type="tel" name="phone" required placeholder="04XX XXX XXX"></label>
 <label>Year level<select name="year_level" required><option value="">Select year level</option><option>Year 10</option><option>Year 11</option><option>Year 12</option><option>Gap year</option><option>Parent</option></select></label>
-<fieldset class="form-block" data-require-checked=".js-ucat-class"><legend>Which classes? <small class="opt">(tick both for the $75 bundle)</small></legend>
+<fieldset class="form-block" data-require-checked=".js-ucat-class"><legend>What are you signing up for? <small class="opt">(tick both paid classes for the $75 bundle)</small></legend>
 <div class="radio-row">
+<label class="check-item"><input type="checkbox" name="classes" value="Just the free first class" class="js-ucat-class"><span><strong>Just the free first class</strong><small>Free &bull; try it, then decide whether to keep going</small></span></label>
 <label class="check-item"><input type="checkbox" name="classes" value="Lecture class ($35 per class)" class="js-ucat-class"><span><strong>Lecture class</strong><small>$35 per class &bull; content taught live</small></span></label>
 <label class="check-item"><input type="checkbox" name="classes" value="Workshop class ($45 per class)" class="js-ucat-class"><span><strong>Workshop class</strong><small>$45 per class &bull; small group, working questions</small></span></label>
-</div><p class="block-note" style="margin:13px 0 0">Both in the same week is $75 instead of $80. Your first class is free either way.</p></fieldset>
+</div><p class="block-note" style="margin:13px 0 0">Your first class is free whichever you pick, and you can sign up for that alone. Both paid classes in the same week is $75 instead of $80.</p></fieldset>
 <label>How did you hear about us? <small class="opt">(optional)</small><input type="text" name="heard_from" placeholder="Instagram, a friend, school, Google"></label>
 <label>Anything we should know? <small class="opt">(optional)</small><textarea name="message" rows="3" placeholder="When you plan to sit the UCAT, any clashes, any questions"></textarea></label>
 <button class="btn btn-primary" type="submit">Send Enrolment</button>
