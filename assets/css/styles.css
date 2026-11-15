@@ -851,3 +851,9 @@
    so nobody has to go looking for it after signing up */
 .ready-actions{display:flex;flex-wrap:wrap;gap:12px}
 .ready-actions .btn{margin:0}
+
+
+/* V50: downloads.html opens every file at once, so a card arrived at by its
+   anchor gets a moment of emphasis rather than leaving you hunting. */
+.resource-card:target{border-color:var(--blue);box-shadow:0 0 0 3px rgba(54,88,255,.18),0 18px 50px rgba(18,21,43,.1);scroll-margin-top:120px}
+#ucat-resources,#starter-kits,#sace-resources{scroll-margin-top:90px}
