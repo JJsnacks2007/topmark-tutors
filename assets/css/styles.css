@@ -875,3 +875,31 @@
 .resource-pick small{font-weight:700;color:var(--muted)}
 
 .hp-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+
+/* V53: the student portal lives at app.topmarktutors.com.au now, so the header
+   carries a way into it. Past "Contact Us" rather than before it, because the
+   far-right corner is where a returning student looks first, and outlined so
+   the dark pill is still the loudest thing up there. The header folds into the
+   menu button at 1080px and takes the Contact Us pill with it, so Login hides
+   at exactly the same width rather than being left stranded on its own. */
+.nav-login{padding-left:17px;padding-right:17px;font-size:.92rem}
+.nav-login:hover{border-color:var(--ink)}
+.nav-login:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+@media(max-width:1080px){.nav-login{display:none}}
+@media(min-width:1081px) and (max-width:1260px){.nav-login{padding-left:14px;
+  padding-right:14px;font-size:.89rem}}
+@media(min-width:1081px) and (max-width:1160px){.nav-login{padding-left:12px;
+  padding-right:12px;font-size:.86rem}}
+
+/* in the phone menu it is the last row, and the divider marks it as the one
+   thing in there that leaves the website */
+.nav-menu-login{border-top:1px solid var(--line);margin-top:6px;padding-top:14px}
+
+/* The menu-only rows were being revealed from 1200px down, but the header does
+   not actually fold into the menu button until 1080px. Between those two
+   widths -- a very ordinary laptop size -- "Contact Us" was therefore drawn
+   twice, once as a nav link and again as the dark pill beside it. Adding a
+   second button made that two pairs, which is what turned it up. */
+@media(min-width:1081px) and (max-width:1200px){
+  .main-nav .nav-only-menu{display:none}}
