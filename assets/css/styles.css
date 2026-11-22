@@ -857,3 +857,21 @@
    anchor gets a moment of emphasis rather than leaving you hunting. */
 .resource-card:target{border-color:var(--blue);box-shadow:0 0 0 3px rgba(54,88,255,.18),0 18px 50px rgba(18,21,43,.1);scroll-margin-top:120px}
 #ucat-resources,#starter-kits,#sace-resources{scroll-margin-top:90px}
+
+
+/* V51: the consent tick and the resource picker on the signup forms, plus the
+   off-screen honeypot the script uses to spot bots. */
+.lead-consent{display:flex;gap:11px;align-items:flex-start;margin:16px 0 0;font-size:.88rem;
+  font-weight:750;line-height:1.5;color:#3d465d;cursor:pointer}
+.lead-consent input{width:18px;height:18px;flex:0 0 auto;margin-top:1px;accent-color:var(--blue)}
+.lead-consent span{padding-top:1px}
+
+.resource-pick{display:grid;gap:7px;margin:0 0 16px;font-weight:850;font-size:.92rem;
+  color:var(--ink)}
+.resource-pick select{width:100%;font:inherit;font-weight:700;padding:13px 15px;
+  border:1px solid var(--line);border-radius:14px;background:#fff;color:var(--ink)}
+.resource-pick select:focus{outline:none;border-color:var(--blue);
+  box-shadow:0 0 0 3px rgba(54,88,255,.16)}
+.resource-pick small{font-weight:700;color:var(--muted)}
+
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
